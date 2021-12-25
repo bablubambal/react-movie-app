@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { addMovies,fetchAsyncMovieOrShowDetails,fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSlice'
 const Home = () => {
     const movieText = "Harry";
+    const showText = "Friends"
      const dispatch = useDispatch()
 
 useEffect(() => {
@@ -19,8 +20,8 @@ useEffect(() => {
     //    dispatch(addMovies(response.data))
     // };
     // fetchMovies()
-    dispatch(fetchAsyncMovies())
-    dispatch(fetchAsyncShows())
+    dispatch(fetchAsyncMovies(movieText))
+    dispatch(fetchAsyncShows(showText))
    // dispatch(fetchAsyncMovieOrShowDetails("tt1201607"))
 },[dispatch])
 
